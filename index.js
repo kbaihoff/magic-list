@@ -1,4 +1,3 @@
-const whichWay = document.querySelector('#whichWay')
 const newEntry = document.querySelector('#newEntry')
 
 function renderListItem(index, value) {
@@ -17,30 +16,24 @@ function renderList(data) {
 }
 
 
-// function handleSubmit(ev) {
-//   ev.preventDefault()
-//   const ww = ev.target
-//   const button = document.querySelector('button')
-//   console.log(ww.elements)
-// }
-
-function handleSubmit2(ev) {
+function handleSubmit(ev) {
   ev.preventDefault()
-  const ne = ev.target // should give us the object submitted
+  const ne = ev.target // should give us the object was CLICKED
   const listOutput = document.querySelector('#listOutput')
-  
-  const newThing = {
-    name: ne.item.value,
+  const itemName = newEntry.item.value
+ 
+  if (ne.id === 'reg') {
+    const newThing = {
+      name: itemName,
+    }
+    listOutput.appendChild(renderList(newThing))
   }
-
- listOutput.appendChild(renderList(newThing))
- listOutput.prepend(renderList(newThing))
+  else if (ne.id === 'irreg') {
+    const newThing = {
+      name: itemName,
+    }
+    listOutput.prepend(renderList(newThing))
+  }
 }
 
-
-
-
-
-
-// whichWay.addEventListener('submit', handleSubmit)
-newEntry.addEventListener('submit', handleSubmit2)
+newEntry.addEventListener('click', handleSubmit)
