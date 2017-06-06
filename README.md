@@ -1,1 +1,1 @@
-# magic-list
+# Die Liste der Magie

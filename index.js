@@ -2,7 +2,12 @@ const newEntry = document.querySelector('#newEntry')
 
 function renderListItem(index, value) {
   const li = document.createElement('li')
-  li.innerHTML = `${value}`
+  const button = document.createElement('button')
+  
+  li.innerHTML = `${value}             `
+  button.innerHTML = 'o'
+  button.id = value
+  li.appendChild(button)
   return li
 }
 
