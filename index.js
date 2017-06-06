@@ -1,12 +1,33 @@
 const newEntry = document.querySelector('#newEntry')
 
+function handleFavorite(ev) {
+  ev.preventDefault()
+  const btn = ev.target
+
+  // For testing purposes
+  console.log("I hath been favorited!")
+  console.log(btn)
+
+  if (btn.value === 'false') {
+    btn.style.backgroundColor = 'blue'
+    btn.value = true
+  }
+  else if (btn.value === 'true') {
+    btn.style.backgroundColor = null
+    btn.value = false
+  }
+}
+
 function renderListItem(index, value) {
   const li = document.createElement('li')
-  const button = document.createElement('button')
-  
   li.innerHTML = `${value}             `
+
+  const button = document.createElement('button')
   button.innerHTML = 'o'
-  button.id = value
+  button.id = value // The button id is the name of the item
+  button.value = false
+  button.addEventListener('click', handleFavorite)
+  
   li.appendChild(button)
   return li
 }
@@ -20,25 +41,21 @@ function renderList(data) {
   return ul
 }
 
-
-function handleSubmit(ev) {
+function handleClick(ev) {
   ev.preventDefault()
   const ne = ev.target // should give us the object was CLICKED
   const listOutput = document.querySelector('#listOutput')
   const itemName = newEntry.item.value
- 
+  const newThing = {
+    name: itemName,
+  }
+
   if (ne.id === 'reg') {
-    const newThing = {
-      name: itemName,
-    }
     listOutput.appendChild(renderList(newThing))
   }
   else if (ne.id === 'irreg') {
-    const newThing = {
-      name: itemName,
-    }
     listOutput.prepend(renderList(newThing))
   }
 }
 
-newEntry.addEventListener('click', handleSubmit)
+newEntry.addEventListener('click', handleClick)
