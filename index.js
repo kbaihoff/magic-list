@@ -4,10 +4,6 @@ function handleFavorite(ev) {
   ev.preventDefault()
   const btn = ev.target
 
-  // For testing purposes
-  console.log("I hath been favorited!")
-  console.log(btn)
-
   if (btn.value === 'false') {
     btn.style.backgroundColor = 'blue'
     btn.value = true
@@ -18,17 +14,35 @@ function handleFavorite(ev) {
   }
 }
 
-function renderListItem(index, value) {
-  const li = document.createElement('li')
-  li.innerHTML = `${value}             `
+function handleDelete(ev) {
+  ev.preventDefault()
+  const btn = ev.target
+  console.log("delete")
+}
 
+function makeX() {
+  const button = document.createElement('button')
+  button.innerHTML = 'X'
+  button.addEventListener('click', handleDelete)
+  return button
+}
+
+function makeO(value) {
   const button = document.createElement('button')
   button.innerHTML = 'o'
   button.id = value // The button id is the name of the item
   button.value = false
   button.addEventListener('click', handleFavorite)
-  
-  li.appendChild(button)
+  return button
+}
+
+function renderListItem(index, value) {
+  const li = document.createElement('li')
+  li.innerHTML = `${value}             `
+  const oButton = makeO(value)
+  const xButton = makeX()
+  li.appendChild(oButton)
+  li.appendChild(xButton)
   return li
 }
 
