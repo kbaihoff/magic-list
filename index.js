@@ -1,3 +1,4 @@
+const answer = document.querySelector('form#answer')
 const newEntry = document.querySelector('form#newEntry')
 const listOutput = document.querySelector('div#listOutput')
 const uList = document.querySelector('ul#uList')
@@ -6,11 +7,13 @@ function handleFavorite(ev) {
   ev.preventDefault()
   const btn = ev.target
   if (btn.value === 'false') {
-    btn.style.backgroundColor = 'blue'
+    btn.style.backgroundColor = 'gold'
+    btn.style.borderColor = 'gold'
     btn.value = true
   }
   else if (btn.value === 'true') {
-    btn.style.backgroundColor = null
+    btn.style.backgroundColor = 'cornflowerblue'
+    btn.style.borderColor = 'cornflowerblue'
     btn.value = false
   }
 }
@@ -25,6 +28,7 @@ function handleDelete(ev) {
 function makeX(value) {
   const button = document.createElement('button')
   button.innerHTML = 'X'
+  button.className = 'x'
   button.id = value
   button.addEventListener('click', handleDelete)
   return button
@@ -33,6 +37,7 @@ function makeX(value) {
 function makeO() {
   const button = document.createElement('button')
   button.innerHTML = 'o'
+  button.className = 'o'
   button.value = false
   button.addEventListener('click', handleFavorite)
   return button
@@ -72,4 +77,14 @@ function handleClick(ev) {
   listOutput.appendChild(renderList(newThing, ne.id))
 }
 
+function handleSubmit(ev) {
+  ev.preventDefault()
+  const a = ev.target
+  const listCat = a.category.value
+  const newHeading = "The List of " + listCat
+  document.querySelector('h1').textContent = newHeading
+  document.querySelector('div#listInput').style.display = 'block'
+}
+
+answer.addEventListener('submit', handleSubmit)
 newEntry.addEventListener('click', handleClick)

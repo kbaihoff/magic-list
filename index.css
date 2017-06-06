@@ -1,4 +1,41 @@
-body {
+h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+ul {
+  list-style-type: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button.o {
+  background-color: cornflowerblue;
+  border-color: cornflowerblue;
+}
+
+button.x {
+  background-color: red;
+  border-color: red;
+}
+
+li {
+  background-color: #DDDDB7;
+  border-width: 3px;
+  border-style: ridge;
+  border-color: black;
+  margin-bottom: 5px;
+  padding: 5px;
+  max-width: 400px;
+}
+
+
+
+
+
+/*body {
   padding: 1rem 4rem;
 }
 
@@ -47,4 +84,4 @@ dl:nth-of-type(even) {
     content: "";
     display: table;
   }
-}
+}*/

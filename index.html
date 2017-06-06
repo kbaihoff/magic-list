@@ -6,16 +6,30 @@
     <title>Magic List</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">
-    <link rel="stylesheet" href="index.css">-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">-->
+    <link rel="stylesheet" href="index.css">
   </head>
   
   <body>
     <h1>The List of Magic</h1>
     <section>
 
-      <div id="listInput">
+      <div id="listType">
+        <h2>What kinds of things do you want to list?</h2>
+        <form id="answer">
+          <p>
+            <input type="text" id="category" name="category">
+            <button type="submit">Los geht's!</button>
+          </p>
+        </form>
+      </div>
+
+      <div hidden id="listInput">
+        <h2>Good choice</h2>
         <form id="newEntry">
+          <p>
+            Now that you have chosen a category, start entering the list items one by one, and press which ever button you want, depending on whether you like to make your lists like normal people or not...
+          </p>
           <p>
             <label for="item">New item: </label>
             <input type="text" id="item" name="item">
