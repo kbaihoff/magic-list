@@ -1,3 +1,4 @@
+const whichWay = document.querySelector('#whichWay')
 const newEntry = document.querySelector('#newEntry')
 
 function renderListItem(index, value) {
@@ -15,7 +16,15 @@ function renderList(data) {
   return ul
 }
 
-function handleSubmit(ev) {
+
+// function handleSubmit(ev) {
+//   ev.preventDefault()
+//   const ww = ev.target
+//   const button = document.querySelector('button')
+//   console.log(ww.elements)
+// }
+
+function handleSubmit2(ev) {
   ev.preventDefault()
   const ne = ev.target // should give us the object submitted
   const listOutput = document.querySelector('#listOutput')
@@ -25,6 +34,13 @@ function handleSubmit(ev) {
   }
 
  listOutput.appendChild(renderList(newThing))
+ listOutput.prepend(renderList(newThing))
 }
 
-newEntry.addEventListener('submit', handleSubmit)
+
+
+
+
+
+// whichWay.addEventListener('submit', handleSubmit)
+newEntry.addEventListener('submit', handleSubmit2)
