@@ -36,7 +36,7 @@ function makeX(value) {
 
 function makeO() {
   const button = document.createElement('button')
-  button.innerHTML = 'o'
+  button.innerHTML = 'O'
   button.className = 'o'
   button.value = false
   button.addEventListener('click', handleFavorite)

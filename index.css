@@ -1,9 +1,18 @@
+body {
+  width: 50%;
+  margin: auto;
+}
+
 h1 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 h2 {
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+form.answer {
+  margin-bottom: 50px;
 }
 
 ul {
@@ -14,74 +23,22 @@ ul {
 button.o {
   background-color: cornflowerblue;
   border-color: cornflowerblue;
+  min-height: 30px;
+  min-width: 30px;
 }
 
 button.x {
   background-color: red;
   border-color: red;
+  min-height: 30px;
+  min-width: 30px;
 }
 
 li {
   background-color: #DDDDB7;
   border-width: 3px;
   border-style: ridge;
-  border-color: black;
-  margin-bottom: 5px;
+  font-size: 150%;
   padding: 5px;
   max-width: 400px;
 }
-
-
-
-
-
-/*body {
-  padding: 1rem 4rem;
-}
-
-section > div {
-  width: 80%;
-  margin: 1rem auto;
-}
-
-form {
-  margin-top: 50px;
-}
-
-dl {
-  padding: 15px 10px;
-}
-
-dl > li {
-  list-style: none;
-}
-
-dt, dd {
-  display: inline-block;
-  vertical-align: top;
-  width: 48%;
-}
-
-dl:nth-of-type(even) {
-  background-color: WhiteSmoke;
-}
-
-@media (min-width: 700px) {
-  section > div {
-    width: 60%;
-  }
-}
-
-@media (min-width: 900px) {
-  section > div {
-    float: left;
-    margin: 20px 5%;
-    width: 40%;
-  }
-
-  section::after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-}*/
