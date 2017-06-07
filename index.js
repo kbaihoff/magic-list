@@ -6,14 +6,18 @@ const uList = document.querySelector('ul#uList')
 function handleFavorite(ev) {
   ev.preventDefault()
   const btn = ev.target
+  const favID = btn.id + 'li'
+  const elem = document.getElementById(favID)
   if (btn.value === 'false') {
     btn.style.backgroundColor = 'gold'
     btn.style.borderColor = 'gold'
+    elem.style.backgroundColor = 'yellow'
     btn.value = true
   }
   else if (btn.value === 'true') {
     btn.style.backgroundColor = 'cornflowerblue'
     btn.style.borderColor = 'cornflowerblue'
+    elem.style.backgroundColor = '#DDDDB7'
     btn.value = false
   }
 }
@@ -21,7 +25,8 @@ function handleFavorite(ev) {
 function handleDelete(ev) {
   ev.preventDefault()
   const btn = ev.target
-  const elem = document.getElementById(btn.id)
+  const deleteID = btn.id + 'li'
+  const elem = document.getElementById(deleteID)
   elem.remove()
 }
 
@@ -34,10 +39,11 @@ function makeX(value) {
   return button
 }
 
-function makeO() {
+function makeO(value) {
   const button = document.createElement('button')
   button.innerHTML = 'O'
   button.className = 'o'
+  button.id = value
   button.value = false
   button.addEventListener('click', handleFavorite)
   return button
@@ -46,8 +52,8 @@ function makeO() {
 function renderListItem(index, value) {
   const li = document.createElement('li')
   li.innerHTML = `${value}             `
-  li.id = value
-  const oButton = makeO()
+  li.id = value + 'li'
+  const oButton = makeO(value)
   const xButton = makeX(value)
   li.appendChild(oButton)
   li.appendChild(xButton)
